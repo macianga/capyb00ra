@@ -1,0 +1,12 @@
+body{
+    background-color: pink;
+}
+
+.aaaa {
+    transform: rotate(20deg);
+}
+
+.pe-none{
+    pointer-events: none;
+    user-select: none;
+}
