@@ -10,3 +10,14 @@ body{
     pointer-events: none;
     user-select: none;
 }
+
+img{
+    width: auto;
+    position: absolute;
+}
+
+.zwykla{
+    height: 150px;
+    top: calc(50% - 75px);
+    left: calc(50% - 150px);
+}
