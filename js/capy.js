@@ -21,6 +21,8 @@ function dragStart(e) {
 }
 
 
+
+// alert("NO TOUCH SCRRENS ALLOWED. LEAVE THE SITE IMMIDIETLY!!111!");
 /* drop targets */
 const capyEl = document.getElementById("main-capy");
 capyEl.addEventListener('dragenter', dragEnter)
@@ -43,9 +45,31 @@ function dragLeave(e) {
   e.target.classList.remove('drag-over');
 }
 
+
+let i = 0;
+function move() {
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("myBar");
+    var width = 1;
+    var id = setInterval(frame, 10);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        width++;
+        elem.style.width = width + "%";
+      }
+    }
+  }
+}
+
 function drop(e) {
   e.target.classList.remove('drag-over');
   console.log("ziemniak dropped")
+  move();
+  alert("cappy happy");
 
   // get the draggable element
   const id = e.dataTransfer.getData('text/plain');
