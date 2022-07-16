@@ -10,12 +10,11 @@
         <div id="capybary">
             <img src="capybaraukradziona.png" alt="capy" class="zwykla">
         </div>
-        zajebiste capy
         <div id="cover">
             <form method="get" action="https://www.google.com/search">
                 <div class="tb">
                     <div class="td">
-                        <input type="text" placeholder="Search..." name="q" value="" required>
+                        <input type="text" placeholder="Search..." name="q" id="q" value="" onKeyUp="showResults(this.value)" required>
                     </div>
                     <div class="td" id="s-cover">
                       <button type="submit">
