@@ -4,12 +4,28 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="styles/style.css">
         <link rel="stylesheet" href="styles/spin.css">
+        <link rel="stylesheet" href="styles/side-bar.css">
     </head>
-    <body style="overflow: clip">
-        <div id="capybary">
-            <img src="capybaraukradziona.png" alt="capy" class="zwykla">
-        </div>
-        zajebiste capy
-        <script type="text/javascript" src="js/capy.js"> </script>
+    <body style="overflow: clip; display: flex; flex-direction: row">
+    <div class="food-side-bar">
+        <img
+          src="assets/ziemniakukradziony2.png"
+          alt="ziemniak"
+          class="image-sm"
+          ondrop="drop()"
+          ondragover="allowDrop()"
+        >
+    </div>
+    <div class="main-capy">
+        <img
+          src="assets/capybaraukradziona.png"
+          alt="capy"
+          class="regular-capy"
+          id="main-capy"
+          draggable="true"
+          ondragstart="drag()"
+        >
+    </div>
+    <script type="text/javascript" src="js/capy.js"> </script>
     </body>
 </html>

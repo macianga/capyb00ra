@@ -19,8 +19,35 @@ function createCapy(){
   capyPlace.appendChild(capy);
 }
 
+const capyDrop = (e) =>{
+  // e.preventDefault();
+  // e.stopPropagation();
+  console.log("dropped");
+}
+
+window.addEventListener('DOMContentLoaded', (event) => {
+  const mainCapy = document.getElementById("main-capy");
+  mainCapy
+    .addEventListener("drop", capyDrop);
+});
+
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+
+
 for (const el of Array.from(elements)) {
-  el.addEventListener('click', (event) =>{
-    createCapy();
-  })
+  // el.addEventListener('click', (event) =>{
+  //   createCapy();
+  // })
 }

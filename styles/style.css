@@ -2,22 +2,23 @@ body{
     background-color: pink;
 }
 
-.aaaa {
-    transform: rotate(20deg);
-}
-
 .pe-none{
     pointer-events: none;
     user-select: none;
 }
 
-img{
-    width: auto;
-    position: absolute;
+.image-sm{
+    max-height: 200px;
 }
 
-.zwykla{
-    height: 150px;
-    top: calc(50% - 75px);
-    left: calc(50% - 150px);
+.main-capy{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.regular-capy{
+    max-width: 200px;
+    height: auto;
 }
