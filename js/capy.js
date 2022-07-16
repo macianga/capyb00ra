@@ -4,6 +4,7 @@ function createCapy(){
   const capy = document.createElement("img");
   const capyPlace = document.getElementById(`capybary`);
   let capyHeight = Math.random() * 250;
+  capyHeight = Math.random() > 0.999 ? capyHeight * 50 : capyHeight;
   capyHeight = capyHeight < 100 ? 100 : capyHeight;
   capy.setAttribute('src', '../capybaraukradziona.png');
   capy.setAttribute('alt', 'capy');
