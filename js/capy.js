@@ -1,53 +1,59 @@
-const elements = document.getElementsByTagName("body");
+// // main loop
+// window.addEventListener('DOMContentLoaded', (event) => {
+//   const mainCapy = document.getElementById("main-capy");
+//   const ziemniak = document.getElementById("ziemniak");
+//   mainCapy.addEventListener("dragstart", drag);
+//   ziemniak.addEventListener("drop", drop);
+//   ziemniak.addEventListener("dragover", allowDrop);
+//
+// });
 
-function createCapy(){
-  const capy = document.createElement("img");
-  const capyPlace = document.getElementById(`capybary`);
-  let capyHeight = Math.random() * 250;
-  capyHeight = Math.random() > 0.999 ? capyHeight * 50 : capyHeight;
-  capyHeight = capyHeight < 100 ? 100 : capyHeight;
-  capy.setAttribute('src', '../capybaraukradziona.png');
-  capy.setAttribute('alt', 'capy');
-  capy.setAttribute('class', 'animation-spin');
+/* draggable element */
+const ziemniak = document.getElementById('ziemniak');
 
-  capy.style.animationTimingFunction = `cubic-bezier(${Math.random()}, ${Math.random()}, ${Math.random()}, ${Math.random()})`;
-  capy.style.animationDuration = `Math.random() > 0.5 ? ${Math.random() * 50}ms : ${Math.random() * 5000 + 2500}ms`;
-  capy.style.height = capyHeight;
-  capy.style.left = event.pageX - (capyHeight/1.5) + 'px';
-  capy.style.top = event.pageY - (capyHeight/2) + 'px';
+ziemniak.addEventListener('dragstart', dragStart);
 
-  capyPlace.appendChild(capy);
-}
-
-const capyDrop = (e) =>{
-  // e.preventDefault();
-  // e.stopPropagation();
-  console.log("dropped");
-}
-
-window.addEventListener('DOMContentLoaded', (event) => {
-  const mainCapy = document.getElementById("main-capy");
-  mainCapy
-    .addEventListener("drop", capyDrop);
-});
-
-function allowDrop(ev) {
-  ev.preventDefault();
-}
-
-function drag(ev) {
-  ev.dataTransfer.setData("text", ev.target.id);
-}
-
-function drop(ev) {
-  ev.preventDefault();
-  var data = ev.dataTransfer.getData("text");
-  ev.target.appendChild(document.getElementById(data));
+function dragStart(e) {
+  e.dataTransfer.setData('text/plain', e.target.id);
+  setTimeout(() => {
+    e.target.classList.add('hide');
+  }, 0);
 }
 
 
-for (const el of Array.from(elements)) {
-  // el.addEventListener('click', (event) =>{
-  //   createCapy();
-  // })
+/* drop targets */
+const capyEl = document.getElementById("main-capy");
+capyEl.addEventListener('dragenter', dragEnter)
+capyEl.addEventListener('dragover', dragOver);
+capyEl.addEventListener('dragleave', dragLeave);
+capyEl.addEventListener('drop', drop);
+
+
+function dragEnter(e) {
+  e.preventDefault();
+  e.target.classList.add('drag-over');
+}
+
+function dragOver(e) {
+  e.preventDefault();
+  e.target.classList.add('drag-over');
+}
+
+function dragLeave(e) {
+  e.target.classList.remove('drag-over');
+}
+
+function drop(e) {
+  e.target.classList.remove('drag-over');
+  console.log("ziemniak dropped")
+
+  // get the draggable element
+  const id = e.dataTransfer.getData('text/plain');
+  const draggable = document.getElementById(id);
+
+  // add it to the drop target
+  e.target.appendChild(draggable);
+
+  // display the draggable element
+  draggable.classList.remove('hide');
 }
