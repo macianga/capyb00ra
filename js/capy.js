@@ -14,13 +14,16 @@ function createCapy(){
 
   capy.style.animationTimingFunction = `cubic-bezier(${Math.random()}, ${Math.random()}, ${Math.random()}, ${Math.random()})`;
   capy.style.animationDuration = Math.random() > 0.999 ? `${Math.random() * 50}ms` : `${Math.random() * 5000 + 2500}ms`;
-  capy.style.height = capyHeight;
+  capy.style.animationDirection = Math.random() > 0.5 ? "normal" : "reverse";
+  capy.style.height = capyHeight.toString();
   capy.style.left = event.pageX - (capyHeight/1.5) + 'px';
   capy.style.top = event.pageY - (capyHeight/2) + 'px';
 
   capyPlace.appendChild(capy);
-  const speedX = Math.random() > 0.5 ? 1 : -1;
-  const speedY = Math.random() > 0.5 ? 1 : -1;
+  const sx = Math.random() + 0.55;
+  const sy = Math.random() + 0.55;
+  const speedX = Math.random() > 0.5 ? sx : -sx;
+  const speedY = Math.random() > 0.5 ? sy : -sy;
   capies.push({el: capy, speedX: speedX, speedY: speedY});
 }
 
