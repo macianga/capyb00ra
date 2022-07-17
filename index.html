@@ -8,13 +8,21 @@
     </head>
     <body style="overflow: clip">
         <div id="capybary">
-            <img src="capybaraukradziona.png" alt="capy" class="zwykla">
+            <img src="assets/capybaraukradziona.png" alt="capy" class="zwykla pe-none">
         </div>
         <div id="cover">
             <form method="get" action="https://www.google.com/search">
                 <div class="tb">
                     <div class="td">
-                        <input type="text" placeholder="Search..." name="q" id="q" value="" onKeyUp="showResults(this.value)" required>
+                        <input
+                          type="text"
+                          placeholder="Search..."
+                          name="q"
+                          id="q"
+                          value=""
+                          onKeyUp="showResults(this.value)"
+                          required autocomplete="off"
+                        >
                     </div>
                     <div class="td" id="s-cover">
                       <button type="submit">

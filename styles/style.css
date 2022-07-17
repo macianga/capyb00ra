@@ -1,23 +1,30 @@
-body{
+* {
+    outline: none;
+}
+
+html,
+body {
+    height: 100%;
+    min-height: 100%;
+}
+
+body {
     background-color: pink;
+    margin: 0;
 }
 
-.aaaa {
-    transform: rotate(20deg);
-}
-
-.pe-none{
+.pe-none {
     pointer-events: none;
     user-select: none;
 }
 
-img{
-    width: auto;
+img {
     position: absolute;
+    width: auto;
 }
 
-.zwykla{
+.zwykla {
     height: 150px;
-    top: calc(50% - 75px);
     left: calc(50% - 115px);
+    top: calc(50% - 75px);
 }

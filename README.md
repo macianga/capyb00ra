@@ -1,3 +1,3 @@
 # capyb00ra
-capy cool
-capybara pink
+
+capy cool capybara pink

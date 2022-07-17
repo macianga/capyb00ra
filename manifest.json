@@ -1,13 +1,9 @@
 {
   "name": "capy",
-  "description": "capy zjabieste",
+  "description": "displays capy as new tab",
   "version": "1.0",
   "manifest_version": 3,
-  "action": {
-    "default_icon": "images/tabFlipper16.png",
-    "default_title": "Press Ctrl(Win)/Command(Mac)+Shift+ Left or Right to Flip Tabs"
-  },
-  "chrome_url_overrides" : {
+  "chrome_url_overrides": {
     "newtab": "index.html"
   }
 }
