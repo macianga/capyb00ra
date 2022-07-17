@@ -58,7 +58,6 @@ function animate() {
 window.addEventListener('DOMContentLoaded', (event) => {
   const body = document.getElementsByTagName("body").item(0);
   body.addEventListener('click', (event) => {
-    console.log(event.target.tagName);
     const allowedElements = ["BODY", "IMG"]
     if (allowedElements.includes(event.target.tagName)) {
       createCapy();

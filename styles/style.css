@@ -13,6 +13,10 @@ body {
     margin: 0;
 }
 
+.capy-cursor {
+    cursor: url("../icons/capy48.png"), auto !important;
+}
+
 .pe-none {
     pointer-events: none;
     user-select: none;
