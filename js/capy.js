@@ -6,7 +6,7 @@ function createCapy(e) {
   let capyHeight = Math.random() * 250;
   capyHeight = Math.random() > 0.999 ? capyHeight * 50 : capyHeight;
   capyHeight = capyHeight < 100 ? 100 : capyHeight;
-  capy.setAttribute('src', '../assets/capybaraukradziona.png');
+  capy.setAttribute('src', '../assets/pngegg.png'); //change
   capy.setAttribute('alt', 'capy');
   capy.setAttribute('class', 'animation-spin pe-none');
 
